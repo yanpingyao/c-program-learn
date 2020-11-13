@@ -6,6 +6,7 @@ BIN :=$(patsubst %.o, %, $(OBJ))
 all: $(BIN)
 BIN: $(OBJ)
 OBJ: $(SRC)
-.PYTHON: clean cleanobj
-clean: cleanobj;-rm -f $(BIN)
+.PYTHON: clean cleanobj cleanall
+cleanall: clean cleanobj
+clean: ;-rm -f $(BIN)
 cleanobj: ;-rm -f $(OBJ)
